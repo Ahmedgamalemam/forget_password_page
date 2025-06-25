@@ -236,56 +236,15 @@
           </p>
         </div>
 
-        <form id="api" class="w-100" method="post" autocomplete="off">
-          <div class="p-relative">
-            <input
-              id="username"
-              name="username"
-              type="text"
-              class="form_input back-color-EDF7FF"
-              required
-            />
-
-            <label
-              for="username"
-              class="form-login-label d-flex align-items-center"
-            >
-              <img
-                src="https://ahmedgamalemam.github.io/b2c-login-page/images/username.png"
-                alt="username image"
-              />
-              <p>User name</p>
-            </label>
-          </div>
-
-          <div class="p-relative">
-            <input
-              id="password"
-              name="password"
-              type="password"
-              class="form_input back-color-EDF7FF"
-              required
-            />
-
-            <label
-              for="password"
-              class="form-login-label d-flex align-items-center"
-            >
-              <img
-                src="https://ahmedgamalemam.github.io/b2c-login-page/images/passwordimg.png"
-                alt="password image"
-              />
-              <p>Password</p>
-            </label>
-          </div>
-
-          <button
-            id="next"
-            type="submit"
-            class="w-100 back-blue-middle color-white p-2 rounded-3"
-          >
-            Login
-          </button>
+        <form id="api" method="post">
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            required
+          />
+          <button type="submit">Reset Password</button>
         </form>
       </section>
     </main>
@@ -294,18 +253,12 @@
 
     <script src="https://alcdn.msauth.net/lib/1.0.0/js/msal.js"></script>
 
-    <script type="text/javascript">
+    <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const resetForm = document.querySelector("form");
-        resetForm.addEventListener("submit", function (e) {
+        document.getElementById("api").addEventListener("submit", function (e) {
           e.preventDefault();
-
           const email = document.getElementById("email").value;
-
-          // Submit the reset request to Azure AD B2C
-          Login.submit({
-            email: email,
-          });
+          Login.submit({ email });
         });
       });
     </script>
