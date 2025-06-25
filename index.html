@@ -43,10 +43,11 @@
       input[type="text"],
       input[type="password"] {
         width: 100%;
-        padding: 8px;
+        height: 52px;
+        padding: 0.5rem;
         border: none;
         border-radius: 8px;
-        background: #edf7ff;
+        background: #ede9f2;
         margin-bottom: 1.5rem;
       }
       input[type="text"]:focus,
@@ -112,8 +113,8 @@
         padding: 2rem 1.5rem;
       }
       section:has(form) > img {
-        width: 45.5%;
-        height: 7rem;
+        width: 34%;
+        height: 8rem;
       }
       section:has(form) > div {
         text-align: center;
@@ -137,6 +138,66 @@
 
       .entry-item {
         position: relative;
+      }
+
+      .VerificationControl.emailVerificationControl_li {
+        list-style: none;
+      }
+
+      #attributeList ul {
+        padding: 0;
+      }
+
+      .attrEntry {
+        text-align: start;
+      }
+
+      .attrEntry > label {
+        font-weight: 400;
+        margin-bottom: 0.3rem;
+      }
+
+      .helpLink,
+      #cancel {
+        display: none;
+      }
+
+      .sendCode,
+      .sendNewCode,
+      .verifyCode,
+      .changeClaims,
+      #continue {
+        width: 100%;
+        height: 52px;
+        text-align: center;
+        padding: 0.5rem;
+        border-radius: 8px;
+        background: #4c247b;
+        color: white;
+      }
+      #continue {
+        background-color: #ede9f2;
+      }
+      .sendCode {
+        margin-bottom: 1.5rem;
+      }
+
+      .sendNewCode,
+      .verifyCode {
+        width: 50%;
+      }
+
+      .sendNewCode {
+        background: white;
+        border: 1px solid #4c247b;
+        color: var(--Primary, #4c247b);
+      }
+
+      .buttons:has(.verifyCode) {
+        display: flex;
+        align-items: center;
+        gap: 1.3rem;
+        margin-bottom: 1.5rem;
       }
 
       .entry-item:has(input[type="text"]:focus) > label[for="email"],
@@ -169,14 +230,6 @@
         }
       }
 
-      #forgotPassword {
-        position: absolute;
-        right: 0;
-        top: 71%;
-        color: #4c247b !important;
-        text-decoration: none !important;
-      }
-
       .error.itemLevel {
         position: absolute;
         right: 0;
@@ -184,11 +237,6 @@
       }
       .error.itemLevel > p {
         color: #eb001b !important;
-      }
-
-      .rememberMe {
-        text-align: start;
-        margin-bottom: 2rem;
       }
 
       div:has(#next) {
@@ -208,6 +256,10 @@
           color: rgb(211, 3, 3);
         }
       }
+
+      #emailVerificationControl_error_message {
+        color: rgb(211, 3, 3);
+      }
     </style>
 
     <link
@@ -222,7 +274,7 @@
     <main class="main-login d-flex align-items-center">
       <section
         class="d-flex flex-column align-items-center back-color-light rounded-3 m-auto"
-        style="min-width: 40%"
+        style="min-width: 48.5%"
       >
         <img
           class="mb-3"
@@ -230,10 +282,10 @@
           alt="logo"
         />
 
-        <div class="mb-4">
-          <h3 class="color-blue-dark">Welcome</h3>
+        <div>
+          <h3 class="color-blue-dark">User Details</h3>
           <p style="color: #4b5059">
-            Use Flight Fusion credintials to continue
+            Enter your registered email address to get the code
           </p>
         </div>
 
