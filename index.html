@@ -113,11 +113,12 @@
         padding: 2rem 1.5rem;
       }
       section:has(form) > img {
-        width: 34%;
-        height: 8rem;
+        width: 11.6rem;
+        height: 7rem;
       }
       section:has(form) > div {
         text-align: center;
+        margin-bottom: 1rem;
         h3 {
           font-size: 2vw;
           font-weight: 700;
@@ -134,6 +135,11 @@
       .heading,
       .intro {
         display: none;
+      }
+      #emailVerificationControl_success_message {
+        display: block;
+        text-align: center;
+        margin-bottom: 1rem;
       }
 
       .entry-item {
@@ -233,24 +239,7 @@
       }
 
       .error.itemLevel {
-        position: absolute;
-        right: 0;
-        top: -36%;
-      }
-      .error.itemLevel > p {
         color: #eb001b !important;
-      }
-
-      div:has(#next) {
-        margin-block-start: 1rem;
-      }
-
-      #next {
-        width: 100%;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        background: #4c247b;
-        color: white;
       }
 
       .error {
@@ -261,6 +250,16 @@
 
       #emailVerificationControl_error_message {
         color: rgb(211, 3, 3);
+      }
+
+      @media (max-width: 840px) {
+        .main-login {
+          padding: 0rem 5% 0;
+        }
+
+        .main-login > section {
+          min-width: 100%;
+        }
       }
     </style>
 
